@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Method;
+use App\Models\Method;
 use App\Rules\Layer;
 use Illuminate\Http\Request;
 
