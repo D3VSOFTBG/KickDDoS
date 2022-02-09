@@ -1,6 +1,6 @@
 <?php
 
-use App\Setting;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Cache;
 
 function setting($name)
