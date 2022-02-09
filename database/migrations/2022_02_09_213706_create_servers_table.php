@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('servers', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->unsignedInteger('layer');
-            $table->string('command');
+            $table->string('host')->unique();;
+            $table->unsignedInteger('port');
+            $table->string('password');
+            $table->unsignedInteger('concurrent');
         });
     }
 

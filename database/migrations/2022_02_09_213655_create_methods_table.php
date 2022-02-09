@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('methods', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name')->unique();
+            $table->unsignedInteger('layer');
+            $table->string('command');
+            $table->unsignedBigInteger('server_id')->nullable();
         });
     }
 
