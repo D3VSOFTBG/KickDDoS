@@ -30,7 +30,7 @@ class SettingsController extends Controller
     {
         $request->validate([
            'title' => 'required|max:5000',
-           'mail_driver' => 'required|max:5000',
+           'mail_mailer' => 'required|max:5000',
            'mail_host' => 'required|max:5000',
            'mail_port' => 'required|integer|max:5000',
            'mail_username' => 'required|max:5000',

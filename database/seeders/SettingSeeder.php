@@ -46,11 +46,11 @@ class SettingSeeder extends Seeder
             ],
             [
                 'name' => 'MAIL_PORT',
-                'value' => 'port',
+                'value' => 25,
             ],
             [
                 'name' => 'MAIL_USERNAME',
-                'value' => 'port',
+                'value' => 'username',
             ],
             [
                 'name' => 'MAIL_PASSWORD',
