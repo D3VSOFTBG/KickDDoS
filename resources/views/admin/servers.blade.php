@@ -51,13 +51,6 @@
                                                 placeholder="Port" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="concurrent">
-                                                Concurrent <span class="text-danger">*</span>
-                                            </label>
-                                            <input name="concurrent" id="concurrent" type="number" class="form-control"
-                                                placeholder="Concurrent" required>
-                                        </div>
-                                        <div class="form-group">
                                             <label for="password">
                                                 Password <span class="text-danger">*</span>
                                             </label>
