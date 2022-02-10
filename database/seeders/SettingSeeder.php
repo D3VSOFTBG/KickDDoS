@@ -37,7 +37,7 @@ class SettingSeeder extends Seeder
                 'value' => '20',
             ],
             [
-                'name' => 'MAIL_DRIVER',
+                'name' => 'MAIL_MAILER',
                 'value' => 'smtp',
             ],
             [
