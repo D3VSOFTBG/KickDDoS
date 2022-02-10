@@ -151,6 +151,13 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
+                                            <a href="{{route('admin.servers')}}"
+                                                class="nav-link @if (Route::currentRouteName() == 'admin.servers') active @endif">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Servers</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a href="{{route('admin.cache')}}"
                                                 class="nav-link @if (Route::currentRouteName() == 'admin.cache') active @endif">
                                                 <i class="far fa-circle nav-icon"></i>

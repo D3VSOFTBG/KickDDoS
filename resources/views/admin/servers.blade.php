@@ -1,10 +1,10 @@
-@section('page_name'){{ 'Methods' }}@endsection
+@section('page_name'){{ 'Servers' }}@endsection
 
 @include('inc.header')
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <form action="{{route('admin.methods.create')}}" method="post">
+    <form action="{{route('admin.servers.create')}}" method="post">
         @csrf
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -30,38 +30,39 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="form-group">
-                                            <label for="name">
-                                                Name <span class="text-danger">*</span>
+                                            <label for="username">
+                                                Username <span class="text-danger">*</span>
                                             </label>
-                                            <input name="name" id="name" type="text" class="form-control"
-                                                placeholder="Name" required>
+                                            <input name="username" id="username" type="text" class="form-control"
+                                                placeholder="Username" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="layer">
-                                                Layer <span class="text-danger">*</span>
+                                            <label for="host">
+                                                Host <span class="text-danger">*</span>
                                             </label>
-                                            <select name="layer" class="custom-select">
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="7">7</option>
-                                            </select>
+                                            <input name="host" id="host" type="text" class="form-control"
+                                                placeholder="Host" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="command">
-                                                Command <span class="text-danger">*</span>
+                                            <label for="port">
+                                                Port <span class="text-danger">*</span>
                                             </label>
-                                            <input name="command" id="command" type="text" class="form-control"
-                                                placeholder="Command" required>
+                                            <input name="port" id="port" type="number" class="form-control"
+                                                placeholder="Port" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="command">
-                                                Server <span class="text-danger">*</span>
+                                            <label for="concurrent">
+                                                Concurrent <span class="text-danger">*</span>
                                             </label>
-                                            <select name="server_id" class="custom-select" required>
-                                                @foreach ($servers as $server)
-                                                    <option value="{{$server->id}}">{{$server->host}}</option>
-                                                @endforeach
-                                            </select>
+                                            <input name="concurrent" id="concurrent" type="number" class="form-control"
+                                                placeholder="Concurrent" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">
+                                                Password <span class="text-danger">*</span>
+                                            </label>
+                                            <input name="password" id="password" type="text" class="form-control"
+                                                placeholder="Password" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -87,7 +88,7 @@
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">
-                                There are {{$methods->total()}} methods.
+                                There are {{$servers->total()}} servers.
                             </h3>
                         </div>
                         <div class="card-body">
@@ -98,48 +99,44 @@
                                             #
                                         </th>
                                         <th class="align-middle">
-                                            Name
+                                            Username
                                         </th>
                                         <th class="align-middle">
-                                            Layer
+                                            Host
                                         </th>
                                         <th class="align-middle">
-                                            Command
+                                            Port
                                         </th>
                                         <th class="align-middle">
-                                            Server
+                                            Concurrent
                                         </th>
                                         <th class="align-middle">
                                             Actions
                                         </th>
                                     </tr>
-                                    @foreach ($methods as $method)
+                                    @foreach ($servers as $server)
                                     <tr>
                                         <td class="align-middle">
-                                            {{$method->id}}
+                                            {{$server->id}}
                                         </td>
                                         <td class="align-middle">
-                                            {{$method->name}}
+                                            {{$server->username}}
                                         </td>
                                         <td class="align-middle">
-                                            {{$method->layer}}
+                                            {{$server->host}}
                                         </td>
                                         <td class="align-middle">
-                                            {{$method->command}}
+                                            {{$server->port}}
                                         </td>
                                         <td class="align-middle">
-                                            @foreach ($servers as $server)
-                                                @if ($server->id == $method->server_id)
-                                                    {{$server->host}}
-                                                @endif
-                                            @endforeach
+                                            {{$server->concurrent}}
                                         </td>
                                         <td class="align-middle">
-                                            <form action="{{route('admin.methods.delete')}}" method="post"
+                                            <form action="{{route('admin.servers.delete')}}" method="post"
                                                 class="d-inline"
-                                                onsubmit="if(!confirm('Delete (#{{$method->id}}).')){return false;}">
+                                                onsubmit="if(!confirm('Delete (#{{$server->id}}).')){return false;}">
                                                 @csrf
-                                                <input type="hidden" name="id" value="{{$method->id}}">
+                                                <input type="hidden" name="id" value="{{$server->id}}">
                                                 <button type="submit" class="btn btn-danger"><i
                                                         class="fas fa-trash"></i></button>
                                             </form>
@@ -150,7 +147,7 @@
                             </div>
                         </div>
                         <div class="card-footer clearfix">
-                            {{$methods->links()}}
+                            {{$servers->links()}}
                         </div>
                     </div>
                 </div>

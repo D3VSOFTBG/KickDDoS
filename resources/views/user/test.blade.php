@@ -61,11 +61,15 @@
                                             <input name="seconds" type="number" class="form-control" placeholder="Seconds" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="method">
+                                            <label for="method_id">
                                                 Method <span class="text-danger">*</span>
                                             </label>
-                                            <select name="mail_driver" class="custom-select">
-                                                <option value="soon">Soon</option>
+                                            <select name="method_id" class="custom-select">
+                                                @foreach ($methods as $method)
+                                                    @if ($method->layer == 3)
+                                                        <option value="{{$method->id}}">{{$method->name}}</option>
+                                                    @endif
+                                                @endforeach
                                             </select>
                                         </div>
                                         <button class="btn btn-primary w-100">Submit</button>
@@ -93,11 +97,15 @@
                                             <input name="seconds" type="number" class="form-control" placeholder="Seconds" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="method">
+                                            <label for="method_id">
                                                 Method <span class="text-danger">*</span>
                                             </label>
-                                            <select name="mail_driver" class="custom-select">
-                                                <option value="soon">Soon</option>
+                                            <select name="method_id" class="custom-select">
+                                                @foreach ($methods as $method)
+                                                    @if ($method->layer == 4)
+                                                        <option value="{{$method->id}}">{{$method->name}}</option>
+                                                    @endif
+                                                @endforeach
                                             </select>
                                         </div>
                                         <button class="btn btn-primary w-100">Submit</button>
@@ -125,11 +133,15 @@
                                             <input name="seconds" type="number" class="form-control" placeholder="Seconds" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="method">
+                                            <label for="method_id">
                                                 Method <span class="text-danger">*</span>
                                             </label>
-                                            <select name="mail_driver" class="custom-select">
-                                                <option value="soon">Soon</option>
+                                            <select name="method_id" class="custom-select">
+                                                @foreach ($methods as $method)
+                                                    @if ($method->layer == 7)
+                                                        <option value="{{$method->id}}">{{$method->name}}</option>
+                                                    @endif
+                                                @endforeach
                                             </select>
                                         </div>
                                         <button class="btn btn-primary w-100">Submit</button>

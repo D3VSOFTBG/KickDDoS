@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CacheController;
 use App\Http\Controllers\Admin\MethodsController;
+use App\Http\Controllers\Admin\ServersController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\HomeController;
@@ -38,6 +39,7 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::get('/admin/users', [UsersController::class, 'render'])->name('admin.users');
     Route::get('/admin/methods', [MethodsController::class, 'render'])->name('admin.methods');
     Route::get('/admin/cache', [CacheController::class, 'render'])->name('admin.cache');
+    Route::get('/admin/servers', [ServersController::class, 'render'])->name('admin.servers');
 
     // POST
     Route::post('/admin/settings', [SettingsController::class, 'post'])->name('admin.settings');
@@ -47,6 +49,8 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::post('/admin/methods/create', [MethodsController::class, 'create'])->name('admin.methods.create');
     Route::post('/admin/methods/delete', [MethodsController::class, 'delete'])->name('admin.methods.delete');
     Route::post('/admin/cache/flush', [CacheController::class, 'flush'])->name('admin.cache.flush');
+    Route::post('/admin/servers/create', [ServersController::class, 'create'])->name('admin.servers.create');
+    Route::post('/admin/servers/delete', [ServersController::class, 'delete'])->name('admin.servers.delete');
 });
 
 require __DIR__.'/auth.php';
