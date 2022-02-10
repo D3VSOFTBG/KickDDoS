@@ -16,6 +16,12 @@
     <!-- Admin Style -->
     <link rel="stylesheet" href="{{asset('/assets/css/d3vsoft.css')}}">
 
+    @if (session('ok'))
+    <script>
+        alert('OK');
+    </script>
+    @endif
+
     @if ($errors->any())
     <script>
         alert('{{ implode(' ', $errors->all(':message')) }}');

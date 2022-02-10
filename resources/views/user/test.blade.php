@@ -41,39 +41,45 @@
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-3" role="tabpanel"
                                     aria-labelledby="nav-3-tab">
-                                    <div class="mt-3">
-                                        <div class="form-group">
-                                            <label for="host">
-                                                Host <span class="text-danger">*</span>
-                                            </label>
-                                            <input name="host" type="text" class="form-control" placeholder="Host" required>
+                                    <form action="{{route('user.test')}}" method="post">
+                                        @csrf
+                                        <div class="mt-3">
+                                            <div class="form-group">
+                                                <label for="host">
+                                                    Host <span class="text-danger">*</span>
+                                                </label>
+                                                <input name="host" type="text" class="form-control" placeholder="Host"
+                                                    required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="port">
+                                                    Port <span class="text-danger">*</span>
+                                                </label>
+                                                <input name="port" type="number" class="form-control" placeholder="Port"
+                                                    required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="seconds">
+                                                    Seconds <span class="text-danger">*</span>
+                                                </label>
+                                                <input name="seconds" type="number" class="form-control"
+                                                    placeholder="Seconds" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="method_id">
+                                                    Method <span class="text-danger">*</span>
+                                                </label>
+                                                <select name="method_id" class="custom-select">
+                                                    @foreach ($methods as $method)
+                                                        @if ($method->layer == 3)
+                                                            <option value="{{$method->id}}">{{$method->name}}</option>
+                                                        @endif
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary w-100">Submit</button>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="port">
-                                                Port <span class="text-danger">*</span>
-                                            </label>
-                                            <input name="port" type="number" class="form-control" placeholder="Port" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="seconds">
-                                                Seconds <span class="text-danger">*</span>
-                                            </label>
-                                            <input name="seconds" type="number" class="form-control" placeholder="Seconds" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="method_id">
-                                                Method <span class="text-danger">*</span>
-                                            </label>
-                                            <select name="method_id" class="custom-select">
-                                                @foreach ($methods as $method)
-                                                    @if ($method->layer == 3)
-                                                        <option value="{{$method->id}}">{{$method->name}}</option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <button class="btn btn-primary w-100">Submit</button>
-                                    </div>
+                                    </form>
                                 </div>
                                 <div class="tab-pane fade" id="nav-4" role="tabpanel"
                                     aria-labelledby="nav-4-tab">
@@ -108,44 +114,47 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <button class="btn btn-primary w-100">Submit</button>
+                                        <button type="submit" class="btn btn-primary w-100">Submit</button>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="nav-7" role="tabpanel"
                                     aria-labelledby="nav-7-tab">
-                                    <div class="mt-3">
-                                        <div class="form-group">
-                                            <label for="host">
-                                                Host <span class="text-danger">*</span>
-                                            </label>
-                                            <input name="host" type="text" class="form-control" placeholder="Host" required>
+                                    <form action="{{route('user.test')}}" method="post">
+                                        @csrf
+                                        <div class="mt-3">
+                                            <div class="form-group">
+                                                <label for="host">
+                                                    Host <span class="text-danger">*</span>
+                                                </label>
+                                                <input name="host" type="text" class="form-control" placeholder="Host" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="port">
+                                                    Port <span class="text-danger">*</span>
+                                                </label>
+                                                <input name="port" type="number" class="form-control" placeholder="Port" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="seconds">
+                                                    Seconds <span class="text-danger">*</span>
+                                                </label>
+                                                <input name="seconds" type="number" class="form-control" placeholder="Seconds" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="method_id">
+                                                    Method <span class="text-danger">*</span>
+                                                </label>
+                                                <select name="method_id" class="custom-select">
+                                                    @foreach ($methods as $method)
+                                                        @if ($method->layer == 7)
+                                                            <option value="{{$method->id}}">{{$method->name}}</option>
+                                                        @endif
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary w-100">Submit</button>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="port">
-                                                Port <span class="text-danger">*</span>
-                                            </label>
-                                            <input name="port" type="number" class="form-control" placeholder="Port" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="seconds">
-                                                Seconds <span class="text-danger">*</span>
-                                            </label>
-                                            <input name="seconds" type="number" class="form-control" placeholder="Seconds" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="method_id">
-                                                Method <span class="text-danger">*</span>
-                                            </label>
-                                            <select name="method_id" class="custom-select">
-                                                @foreach ($methods as $method)
-                                                    @if ($method->layer == 7)
-                                                        <option value="{{$method->id}}">{{$method->name}}</option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <button class="btn btn-primary w-100">Submit</button>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

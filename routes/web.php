@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function (){
 
     // POST
     Route::post('/user/profile', [ProfileController::class, 'post'])->name('user.profile');
+    Route::post('/user/test', [TestController::class, 'post'])->name('user.test');
 });
 
 Route::middleware(['auth', 'admin'])->group(function (){
