@@ -89,3 +89,14 @@ function set_mail_config()
     Config::set('mail.mailers.smtp', $set_mailers_smtp);
     Config::set('mail.from', $set_from);
 }
+function null_to_0($var)
+{
+    if($var == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        return $var;
+    }
+}

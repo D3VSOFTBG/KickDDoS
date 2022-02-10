@@ -20,6 +20,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('is_admin');
+            $table->unsignedBigInteger('concurrent')->nullable();
+            $table->unsignedBigInteger('seconds')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
