@@ -24,7 +24,7 @@
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">
-                                Your have {{null_to_0(Auth::user()->concurrent)}} concurrents and {{null_to_0(Auth::user()->seconds)}} seconds.
+                                Your have {{null_to_0(Auth::user()->concurrent)}}/{{$test_count}} concurrents and {{null_to_0(Auth::user()->seconds)}} seconds.
                             </h3>
                         </div>
                         <div class="card-body">
@@ -63,7 +63,7 @@
                                                     Seconds <span class="text-danger">*</span>
                                                 </label>
                                                 <input name="seconds" type="number" class="form-control"
-                                                    placeholder="Seconds" required>
+                                                    placeholder="Seconds" min="0" max="{{null_to_0(Auth::user()->seconds)}}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="method_id">
