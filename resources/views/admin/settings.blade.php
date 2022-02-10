@@ -54,20 +54,21 @@
                         </div>
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <label for="mail_driver" class="m-0 d-flex">
+                                <label for="mail_mailer" class="m-0 d-flex">
                                     <h3 class="card-title">
-                                        Mail Driver <span class="text-danger">*</span>
+                                        Mail Mailer <span class="text-danger">*</span>
                                     </h3>
                                 </label>
                             </div>
                             <div class="card-body">
-                                <select name="mail_driver" class="custom-select">
-                                    <option value="smtp" @if(setting('MAIL_DRIVER') == 'smtp') selected @endif>SMTP</option>
-                                    <option value="sendmail" @if(setting('MAIL_DRIVER') == 'sendmail') selected @endif>Sendmail</option>
-                                    <option value="mailgun" @if(setting('MAIL_DRIVER') == 'mailgun') selected @endif>Mailgun</option>
-                                    <option value="ses" @if(setting('MAIL_DRIVER') == 'ses') selected @endif>Ses</option>
-                                    <option value="log" @if(setting('MAIL_DRIVER') == 'log') selected @endif>Log</option>
-                                    <option value="array" @if(setting('MAIL_DRIVER') == 'array') selected @endif>Array</option>
+                                <select name="mail_mailer" class="custom-select">
+                                    <option value="smtp" @if(setting('MAIL_MAILER') == 'smtp') selected @endif>SMTP</option>
+                                    <option value="sendmail" @if(setting('MAIL_MAILER') == 'sendmail') selected @endif>Sendmail</option>
+                                    <option value="mailgun" @if(setting('MAIL_MAILER') == 'mailgun') selected @endif>Mailgun</option>
+                                    <option value="ses" @if(setting('MAIL_MAILER') == 'ses') selected @endif>Ses</option>
+                                    <option value="log" @if(setting('MAIL_MAILER') == 'log') selected @endif>Log</option>
+                                    <option value="array" @if(setting('MAIL_MAILER') == 'array') selected @endif>Array</option>
+                                    <option value="failover" @if(setting('MAIL_MAILER') == 'failover') selected @endif>Failover</option>
                                 </select>
                             </div>
                         </div>
