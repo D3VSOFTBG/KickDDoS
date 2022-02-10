@@ -57,7 +57,6 @@ class SettingsController extends Controller
                 'name' => 'MAIL_USERNAME',
                 'value' => $request->mail_username,
             ],
-
             [
                 'name' => 'MAIL_ENCRYPTION',
                 'value' => $request->mail_encryption,
@@ -68,7 +67,7 @@ class SettingsController extends Controller
             ],
         ];
 
-        // MAIL DRIVER
+        // MAIL MAILER
         $drivers = [
             'smtp',
             'sendmail',
@@ -76,14 +75,15 @@ class SettingsController extends Controller
             'ses',
             'log',
             'array',
+            'failover',
         ];
-        if(in_array($request->mail_driver, $drivers))
+        if(in_array($request->mail_mailer, $drivers))
         {
-            $mail_driver = [
-                'name' => 'MAIL_DRIVER',
-                'value' => $request->mail_driver,
+            $mail_mailer = [
+                'name' => 'MAIL_MAILER',
+                'value' => $request->mail_mailer,
             ];
-            array_push($setting_values, $mail_driver);
+            array_push($setting_values, $mail_mailer);
         }
         else
         {
