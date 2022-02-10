@@ -11,10 +11,6 @@ class HomeController extends Controller
 {
     public function render()
     {
-        // set_mail_config();
-
-        // return config('mail');
-
         if(Cache::has('server_count'))
         {
             $server_count = Cache::get('server_count');
