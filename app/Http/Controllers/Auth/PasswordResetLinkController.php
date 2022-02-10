@@ -32,7 +32,7 @@ class PasswordResetLinkController extends Controller
             'email' => ['required', 'email'],
         ]);
 
-        return 'EI TUKA SHTE SLAGAME HELPERA';
+        set_mail_config();
 
         // We will send the password reset link to this user. Once we have attempted
         // to send the link, we will examine the response then see the message we

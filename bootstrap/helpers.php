@@ -2,6 +2,7 @@
 
 use App\Models\Setting;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Config;
 
 function setting($name)
 {
@@ -68,4 +69,23 @@ function is_admin($is_admin)
     {
         return 'No';
     }
+}
+function set_mail_config()
+{
+    $set_mailers_smtp = [
+        'transport' => setting('MAIL_MAILER'),
+        'host' => setting('MAIL_HOST'),
+        'port' => setting('MAIL_PORT'),
+        'encryption' => setting('MAIL_ENCRYPTION'),
+        'username' => setting('MAIL_USERNAME'),
+        'password' => kickddos_decrypt(setting('MAIL_PASSWORD')),
+        'timeout' => null,
+    ];
+    $set_from = [
+        'address' => setting('MAIL_FROM_ADDRESS'),
+        'name' => setting('TITLE'),
+    ];
+
+    Config::set('mail.mailers.smtp', $set_mailers_smtp);
+    Config::set('mail.from', $set_from);
 }
