@@ -50,13 +50,6 @@
                                             <input name="port" id="port" type="number" class="form-control"
                                                 placeholder="Port" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="password">
-                                                Password <span class="text-danger">*</span>
-                                            </label>
-                                            <input name="password" id="password" type="text" class="form-control"
-                                                placeholder="Password" required>
-                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
