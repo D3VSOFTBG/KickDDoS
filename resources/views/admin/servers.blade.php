@@ -108,9 +108,6 @@
                                             Port
                                         </th>
                                         <th class="align-middle">
-                                            Concurrent
-                                        </th>
-                                        <th class="align-middle">
                                             Actions
                                         </th>
                                     </tr>
@@ -127,9 +124,6 @@
                                         </td>
                                         <td class="align-middle">
                                             {{$server->port}}
-                                        </td>
-                                        <td class="align-middle">
-                                            {{$server->concurrent}}
                                         </td>
                                         <td class="align-middle">
                                             <form action="{{route('admin.servers.delete')}}" method="post"

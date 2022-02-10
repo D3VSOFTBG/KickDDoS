@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('host')->unique();
             $table->unsignedInteger('port');
             $table->string('password');
-            $table->unsignedInteger('concurrent');
         });
     }
 

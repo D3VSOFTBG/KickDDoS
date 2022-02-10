@@ -25,14 +25,12 @@ class ServersController extends Controller
             'host' => 'required|unique:servers',
             'port' => 'required|integer',
             'password' => 'required',
-            'concurrent' => 'required|integer',
         ]);
 
         $server = new Server();
         $server->username = $request->username;
         $server->host = $request->host;
         $server->port = $request->port;
-        $server->concurrent = $request->concurrent;
         $server->password = kickddos_encrypt($request->password);
         $server->save();
 
