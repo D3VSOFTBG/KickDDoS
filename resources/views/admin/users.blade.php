@@ -21,7 +21,7 @@
                         <!-- Modal -->
                         <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Create</h5>
@@ -52,6 +52,20 @@
                                                 <option value="0">No</option>
                                                 <option value="1">Yes</option>
                                             </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="concurrents">
+                                                Concurrents <span class="text-danger">*</span>
+                                            </label>
+                                            <input name="concurrents" id="concurrents" type="number" class="form-control"
+                                                placeholder="Concurrents" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="seconds">
+                                                Seconds <span class="text-danger">*</span>
+                                            </label>
+                                            <input name="seconds" id="seconds" type="number" class="form-control"
+                                                placeholder="Seconds" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="expired_at">
@@ -161,7 +175,7 @@
                                                         class="fas fa-user-edit"></i></button>
                                                 <div class="modal fade" id="edit{{$user->id}}" tabindex="-1"
                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="exampleModalLabel">Edit #{{$user->id}}</h5>
@@ -193,6 +207,20 @@
                                                                         <option value="0" @if ($user->is_admin == 0) selected @endif>No</option>
                                                                         <option value="1" @if ($user->is_admin == 1) selected @endif>Yes</option>
                                                                     </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="concurrents">
+                                                                        Concurrents <span class="text-danger">*</span>
+                                                                    </label>
+                                                                    <input name="concurrents" id="concurrents" type="number" class="form-control"
+                                                                        placeholder="Concurrents" value="{{$user->concurrents}}" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="seconds">
+                                                                        Seconds <span class="text-danger">*</span>
+                                                                    </label>
+                                                                    <input name="seconds" id="seconds" type="number" class="form-control"
+                                                                        placeholder="Seconds" value="{{$user->seconds}}" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="expired_at">

@@ -52,7 +52,9 @@
                         <span class="info-box-icon bg-danger elevation-1"><i class="fab fa-wolf-pack-battalion"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Tests</span>
-                            <span class="info-box-number">0</span>
+                            <span class="info-box-number">
+                                {{$test_count}}
+                            </span>
                         </div>
 
                     </div>

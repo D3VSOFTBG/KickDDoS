@@ -29,6 +29,8 @@ class UsersController extends Controller
                 'required',
                 new TrueOrFalse(),
             ],
+            'concurrents' => 'required|integer',
+            'seconds' => 'required|integer',
             'expired_at' => 'required',
             'password' => 'required|min:8',
             'password_confirmation' => 'required|min:8',
@@ -38,6 +40,8 @@ class UsersController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->is_admin = $request->is_admin;
+        $user->concurrents = $request->concurrents;
+        $user->seconds = $request->seconds;
         $user->expired_at = $request->expired_at;
 
         if($request->password == $request->password_confirmation)
@@ -66,6 +70,8 @@ class UsersController extends Controller
                 'required',
                 new TrueOrFalse(),
             ],
+            'concurrents' => 'required|integer',
+            'seconds' => 'required|integer',
             'expired_at' => 'required',
         ]);
 
@@ -78,6 +84,8 @@ class UsersController extends Controller
             ]);
             $user->email = $request->email;
             $user->email_verified_at = NULL;
+            $user->concurrents = $request->concurrents;
+            $user->seconds = $request->seconds;
             $user->expired_at = $request->expired_at;
         }
 
