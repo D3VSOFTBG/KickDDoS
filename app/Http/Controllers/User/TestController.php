@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Method;
 use App\Models\Server;
 use App\Models\Test;
+use App\Rules\Host;
+use App\Rules\Port;
 use App\Rules\Seconds;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,8 +32,15 @@ class TestController extends Controller
     function post(Request $request)
     {
         $request->validate([
-            'host' => 'required',
-            'port' => 'required|integer',
+            'host' => [
+                'required',
+                new Host(),
+            ],
+            'port' => [
+                'required',
+                'integer',
+                new Port(),
+            ],
             'seconds' => [
                 'required',
                 'integer',
