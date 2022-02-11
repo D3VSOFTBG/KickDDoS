@@ -39,7 +39,7 @@ class TestController extends Controller
             return back()->withErrors('You have no concurrents.');
         }
 
-        if (Auth::user()->expired_at >= date('Y-m-d H:i:s'))
+        if (Auth::user()->expired_at <= date('Y-m-d H:i:s'))
         {
             return back()->withErrors('Your tests have expired.');
         }
