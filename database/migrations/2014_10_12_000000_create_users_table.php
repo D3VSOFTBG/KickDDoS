@@ -23,6 +23,7 @@ return new class extends Migration
             $table->unsignedBigInteger('concurrents')->nullable();
             $table->unsignedBigInteger('seconds')->nullable();
             $table->rememberToken();
+            $table->timestamp('expired_at')->nullable();
             $table->timestamps();
         });
     }

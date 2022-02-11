@@ -24,7 +24,7 @@
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">
-                                Your have {{null_to_0(Auth::user()->concurrents)}}/{{$test_count}} concurrents and {{null_to_0(Auth::user()->seconds)}} seconds.
+                                Your have {{null_to_0(Auth::user()->concurrents)}}/{{$test_count}} concurrents and {{null_to_0(Auth::user()->seconds)}} seconds. Expired: {{if_null(Auth::user()->expired_at)}}.
                             </h3>
                         </div>
                         <div class="card-body">

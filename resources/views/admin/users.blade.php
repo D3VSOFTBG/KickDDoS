@@ -109,7 +109,10 @@
                                             Email
                                         </th>
                                         <th class="align-middle">
-                                            Admin
+                                            Role
+                                        </th>
+                                        <th class="align-middle">
+                                            Expired
                                         </th>
                                         <th class="align-middle">
                                             Created
@@ -134,6 +137,9 @@
                                         </td>
                                         <td class="align-middle">
                                             {{is_admin($user->is_admin)}}
+                                        </td>
+                                        <td class="align-middle">
+                                            {{if_null($user->expired_at)}}
                                         </td>
                                         <td class="align-middle">
                                             {{if_null($user->created_at)}}
