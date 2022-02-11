@@ -71,13 +71,6 @@ class InstallController extends Controller
             env_update('DB_USERNAME', $request->db_username);
             env_update('DB_PASSWORD', $request->db_password);
 
-            // // Migrate
-            // Artisan::call('migrate:fresh', ['--force' => true]);
-            // // Seed
-            // Artisan::call('db:seed', ['--force' => true]);
-            // // Generate App key
-            // Artisan::call('key:generate', ['--force' => true]);
-
             return redirect(route('install.2'));
         }
         else
