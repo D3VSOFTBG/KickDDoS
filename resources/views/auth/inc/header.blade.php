@@ -1,10 +1,11 @@
+<!-- Developed by https://d3vsoft.com -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{setting('TITLE')}} {{setting('TITLE_SEPERATOR')}} @yield('page_name')</title>
-    <link rel="icon" type="image/x-icon" href="{{asset('/storage/img/global/' . setting('FAVICON'))}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('favicon.ico')}}">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->

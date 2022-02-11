@@ -16,3 +16,4 @@
 <script src="{{asset('/dist/js/adminlte.min.js')}}"></script>
 </body>
 </html>
+<!-- Developed by https://d3vsoft.com -->
