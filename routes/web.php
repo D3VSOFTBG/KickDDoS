@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ServersController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InstallController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\TestController;
 
@@ -52,6 +53,18 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::post('/admin/cache/flush', [CacheController::class, 'flush'])->name('admin.cache.flush');
     Route::post('/admin/servers/create', [ServersController::class, 'create'])->name('admin.servers.create');
     Route::post('/admin/servers/delete', [ServersController::class, 'delete'])->name('admin.servers.delete');
+});
+
+Route::middleware(['install'])->group(function ()
+{
+    // GET
+    Route::get('/install', [InstallController::class, 'install_get'])->name('install');
+    Route::get('/install/1', [InstallController::class, 'install_1_get'])->name('install.1');
+    Route::get('/install/2', [InstallController::class, 'install_2_get'])->name('install.2');
+
+    // POST
+    Route::post('/install/1', [InstallController::class, 'install_1_post'])->name('install.1');
+    Route::post('/install/2', [InstallController::class, 'install_2_post'])->name('install.2');
 });
 
 require __DIR__.'/auth.php';

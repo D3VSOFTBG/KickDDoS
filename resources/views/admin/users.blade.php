@@ -132,6 +132,12 @@
                                             Role
                                         </th>
                                         <th class="align-middle">
+                                            Concurrents
+                                        </th>
+                                        <th class="align-middle">
+                                            Seconds
+                                        </th>
+                                        <th class="align-middle">
                                             Expired
                                         </th>
                                         <th class="align-middle">
@@ -157,6 +163,12 @@
                                         </td>
                                         <td class="align-middle">
                                             {{is_admin($user->is_admin)}}
+                                        </td>
+                                        <td class="align-middle">
+                                            {{if_null($user->concurrents)}}
+                                        </td>
+                                        <td class="align-middle">
+                                            {{if_null($user->seconds)}}
                                         </td>
                                         <td class="align-middle">
                                             {{if_null($user->expired_at)}}
