@@ -20,6 +20,19 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
+                <div class="clearfix hidden-md-up"></div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-code"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Developer</span>
+                            <span class="info-box-number"> <a href="https://d3vsoft.com" target="_blank">https://d3vsoft.com</a> </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box">
                         <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
@@ -36,23 +49,9 @@
 
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box mb-3">
-                        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+                        <span class="info-box-icon bg-danger elevation-1"><i class="fab fa-wolf-pack-battalion"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">SOON</span>
-                            <span class="info-box-number">0</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="clearfix hidden-md-up"></div>
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">SOON</span>
+                            <span class="info-box-text">Tests</span>
                             <span class="info-box-number">0</span>
                         </div>
 

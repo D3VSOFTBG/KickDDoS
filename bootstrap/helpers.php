@@ -28,7 +28,7 @@ function kickddos_encrypt($unencrypted_password)
     $encryption_iv = config('kickddos.iv');
 
     // Store the encryption key
-    $encryption_key = config('app.key');
+    $encryption_key = config('app.name');
 
     return openssl_encrypt($unencrypted_password, $ciphering, $encryption_key, $options, $encryption_iv);
 }
@@ -41,7 +41,7 @@ function kickddos_decrypt($encrypted_password)
     $options = 0;
 
     // Non-NULL Initialization Vector for decryption
-    $decryption_iv = config('kickddos.iv');
+    $decryption_iv = config('app.name');
 
     // Store the decryption key
     $decryption_key = config('app.key');
