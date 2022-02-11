@@ -19,5 +19,7 @@
         alert('{{ implode(' ', $errors->all(':message')) }}');
     </script>
     @endif
+
+    @include('inc.js')
 </head>
 <body class="hold-transition login-page">
