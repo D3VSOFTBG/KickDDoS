@@ -44,9 +44,7 @@ class TestController extends Controller
 
         $command = str_replace(['{host}', '{port}', '{seconds}'], [$request->host, $request->port, $request->seconds], $method->command);
 
-        Log::info($command);
-
-        $process = Ssh::create($server->username, $server->host, $server->port)->execute($method->command);
+        $process = Ssh::create($server->username, $server->host, $server->port)->execute($command);
 
         if($process->isSuccessful())
         {
