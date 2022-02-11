@@ -115,3 +115,7 @@ function env_update($key, $value)
         ));
     }
 }
+function kickddos_version()
+{
+    return 1;
+}
