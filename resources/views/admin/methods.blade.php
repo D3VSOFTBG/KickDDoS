@@ -51,7 +51,7 @@
                                                 Command <span class="text-danger">*</span>
                                             </label>
                                             <input name="command" id="command" type="text" class="form-control"
-                                                placeholder="Command" required>
+                                                placeholder="{host} {port} {seconds}" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="command">

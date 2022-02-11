@@ -24,7 +24,7 @@
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">
-                                Your have {{null_to_0(Auth::user()->concurrent)}}/{{$test_count}} concurrents and {{null_to_0(Auth::user()->seconds)}} seconds.
+                                Your have {{null_to_0(Auth::user()->concurrents)}}/{{$test_count}} concurrents and {{null_to_0(Auth::user()->seconds)}} seconds.
                             </h3>
                         </div>
                         <div class="card-body">
@@ -55,7 +55,7 @@
                                                 <label for="port">
                                                     Port <span class="text-danger">*</span>
                                                 </label>
-                                                <input name="port" type="number" class="form-control" placeholder="Port"
+                                                <input name="port" type="number" class="form-control" placeholder="Port" min="0" max="65535"
                                                     required>
                                             </div>
                                             <div class="form-group">

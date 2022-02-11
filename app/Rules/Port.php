@@ -25,7 +25,7 @@ class Port implements Rule
      */
     public function passes($attribute, $value)
     {
-        if($value <= 65535 || $value <= 0)
+        if($value <= 65535 && $value >= 0)
         {
             return true;
         }

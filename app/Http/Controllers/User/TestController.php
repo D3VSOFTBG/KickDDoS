@@ -31,6 +31,14 @@ class TestController extends Controller
     }
     function post(Request $request)
     {
+        $test_count = Test::where('expire_at', '>' ,time())->count();
+        $concurrents = Auth::user()->concurrents;
+
+        if ($test_count >= $concurrents)
+        {
+            return back()->withErrors('You have no concurrents.');
+        }
+
         $request->validate([
             'host' => [
                 'required',
@@ -66,7 +74,7 @@ class TestController extends Controller
         }
         else
         {
-            return back()->withError('Error');
+            return back()->withErrors('Error.');
         }
     }
 }
