@@ -189,6 +189,12 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
+                                                                    <label for="expired_at">
+                                                                        Expired <span class="text-danger">*</span>
+                                                                    </label>
+                                                                    <input type="datetime-local" class="form-control" id="expired_at" name="expired_at" value="{{datetime_local($user->expired_at)}}" required>
+                                                                </div>
+                                                                <div class="form-group">
                                                                     <label for="password">
                                                                         Password
                                                                     </label>

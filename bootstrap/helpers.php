@@ -100,3 +100,7 @@ function null_to_0($var)
         return $var;
     }
 }
+function datetime_local($datetime_local)
+{
+    return str_replace(' ', 'T', $datetime_local);
+}

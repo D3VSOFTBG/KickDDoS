@@ -29,6 +29,7 @@ class UsersController extends Controller
                 'required',
                 new TrueOrFalse(),
             ],
+            'expired_at' => 'required',
             'password' => 'required|min:8',
             'password_confirmation' => 'required|min:8',
         ]);
@@ -37,6 +38,7 @@ class UsersController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->is_admin = $request->is_admin;
+        $user->expired_at = $request->expired_at;
 
         if($request->password == $request->password_confirmation)
         {
@@ -64,6 +66,7 @@ class UsersController extends Controller
                 'required',
                 new TrueOrFalse(),
             ],
+            'expired_at' => 'required',
         ]);
 
         $user = User::findOrFail($request->id);
@@ -75,6 +78,7 @@ class UsersController extends Controller
             ]);
             $user->email = $request->email;
             $user->email_verified_at = NULL;
+            $user->expired_at = $request->expired_at;
         }
 
         if(isset($request->password) || isset($request->password_confirmation))
