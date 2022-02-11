@@ -84,9 +84,6 @@ class UsersController extends Controller
             ]);
             $user->email = $request->email;
             $user->email_verified_at = NULL;
-            $user->concurrents = $request->concurrents;
-            $user->seconds = $request->seconds;
-            $user->expired_at = $request->expired_at;
         }
 
         if(isset($request->password) || isset($request->password_confirmation))
@@ -107,6 +104,9 @@ class UsersController extends Controller
 
         $user->name = $request->name;
         $user->is_admin = $request->is_admin;
+        $user->concurrents = $request->concurrents;
+        $user->seconds = $request->seconds;
+        $user->expired_at = $request->expired_at;
         $user->save();
 
         return back();
