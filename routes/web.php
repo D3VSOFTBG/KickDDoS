@@ -61,10 +61,12 @@ Route::middleware(['install'])->group(function ()
     Route::get('/install', [InstallController::class, 'install_get'])->name('install');
     Route::get('/install/1', [InstallController::class, 'install_1_get'])->name('install.1');
     Route::get('/install/2', [InstallController::class, 'install_2_get'])->name('install.2');
+    Route::get('/install/3', [InstallController::class, 'install_3_get'])->name('install.3');
 
     // POST
     Route::post('/install/1', [InstallController::class, 'install_1_post'])->name('install.1');
     Route::post('/install/2', [InstallController::class, 'install_2_post'])->name('install.2');
+    Route::post('/install/3', [InstallController::class, 'install_3_post'])->name('install.3');
 });
 
 require __DIR__.'/auth.php';

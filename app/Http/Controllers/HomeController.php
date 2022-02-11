@@ -6,6 +6,7 @@ use App\Models\Server;
 use App\Models\Test;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
 use Spatie\Ssh\Ssh;
 

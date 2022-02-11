@@ -68,10 +68,6 @@ class SettingSeeder extends Seeder
                 'name' => 'DESCRIPTION',
                 'value' => 'KickDDoS',
             ],
-            [
-                'name' => 'INSTALLED',
-                'value' => NULL,
-            ],
         ]);
     }
 }

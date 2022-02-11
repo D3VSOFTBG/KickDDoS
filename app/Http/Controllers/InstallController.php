@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Setting;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
 use App\Rules\Banned;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
@@ -73,12 +71,12 @@ class InstallController extends Controller
             env_update('DB_USERNAME', $request->db_username);
             env_update('DB_PASSWORD', $request->db_password);
 
-            // Migrate
-            Artisan::call('migrate:fresh', ['--force' => true]);
-            // Seed
-            Artisan::call('db:seed', ['--force' => true]);
-            // Generate App key
-            Artisan::call('key:generate', ['--force' => true]);
+            // // Migrate
+            // Artisan::call('migrate:fresh', ['--force' => true]);
+            // // Seed
+            // Artisan::call('db:seed', ['--force' => true]);
+            // // Generate App key
+            // Artisan::call('key:generate', ['--force' => true]);
 
             return redirect(route('install.2'));
         }
@@ -91,7 +89,22 @@ class InstallController extends Controller
     {
         return view('install.2');
     }
-    function install_2_post(Request $request)
+    function install_2_post()
+    {
+        // Migrate
+        Artisan::call('migrate:fresh', ['--force' => true]);
+        // Seed
+        Artisan::call('db:seed', ['--force' => true]);
+        // Generate App key
+        Artisan::call('key:generate', ['--force' => true]);
+
+        return redirect(route('install.3'));
+    }
+    function install_3_get()
+    {
+        return view('install.3');
+    }
+    function install_3_post(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -116,15 +129,11 @@ class InstallController extends Controller
 
         $user->save();
 
-        $setting = new Setting();
-        $setting_values = [
-            [
-                'name' => 'INSTALLED',
-                'value' => 1,
-            ],
-        ];
-        $setting_index = 'name';
-        batch()->update($setting, $setting_values, $setting_index);
+        if(!file_exists(storage_path('.installed')))
+        {
+            // Create installed file
+            File::put(storage_path('.installed'), 1);
+        }
 
         return redirect(route('home'));
     }

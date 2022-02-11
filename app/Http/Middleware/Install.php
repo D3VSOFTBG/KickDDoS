@@ -16,7 +16,7 @@ class Install
      */
     public function handle(Request $request, Closure $next)
     {
-        if(setting('INSTALLED') == 1)
+        if(file_exists(storage_path('.installed')))
         {
             return abort(403);
         }
