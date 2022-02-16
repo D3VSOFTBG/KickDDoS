@@ -68,6 +68,10 @@ class SettingSeeder extends Seeder
                 'name' => 'DESCRIPTION',
                 'value' => 'KickDDoS',
             ],
+            [
+                'name' => 'PRIVATE_KEY_PATH',
+                'value' => NULL,
+            ],
         ]);
     }
 }
