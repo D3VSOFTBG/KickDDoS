@@ -66,7 +66,14 @@ class TestController extends Controller
 
         $command = str_replace(['{host}', '{port}', '{seconds}'], [$request->host, $request->port, $request->seconds], $method->command);
 
-        $process = Ssh::create($server->username, $server->host, $server->port)->execute($command);
+        if(setting('PRIVATE_KEY_PATH') == NULL)
+        {
+            $process = Ssh::create($server->username, $server->host, $server->port)->execute($command);
+        }
+        else
+        {
+            $process = Ssh::create($server->username, $server->host, $server->port)->usePrivateKey(setting('PRIVATE_KEY_PATH'))->execute($command);
+        }
 
         if($process->isSuccessful())
         {
