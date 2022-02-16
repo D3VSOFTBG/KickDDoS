@@ -11,8 +11,6 @@
                 <div class="col-sm-6">
                     <h1 class="m-0">
                         @yield('page_name')
-                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
-                            title="Save"><i class="fas fa-save"></i></button>
                     </h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
