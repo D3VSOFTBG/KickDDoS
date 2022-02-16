@@ -1,1 +1,1 @@
-rm /storage/.installed
+rm storage/.installed
