@@ -45,28 +45,28 @@
                                         @csrf
                                         <div class="mt-3">
                                             <div class="form-group">
-                                                <label for="host">
+                                                <label for="host_3">
                                                     Host <span class="text-danger">*</span>
                                                 </label>
-                                                <input name="host" type="text" class="form-control" placeholder="Host"
+                                                <input name="host" id="host_3" type="text" class="form-control" placeholder="Host"
                                                     required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="port">
+                                                <label for="port_3">
                                                     Port <span class="text-danger">*</span>
                                                 </label>
-                                                <input name="port" type="number" class="form-control" placeholder="Port" min="0" max="65535"
+                                                <input name="port" id="port_3" type="number" class="form-control" placeholder="Port" min="0" max="65535"
                                                     required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="seconds">
+                                                <label for="seconds_3">
                                                     Seconds <span class="text-danger">*</span>
                                                 </label>
-                                                <input name="seconds" type="number" class="form-control"
+                                                <input name="seconds" id="seconds_3" type="number" class="form-control"
                                                     placeholder="Seconds" min="0" max="{{null_to_0(Auth::user()->seconds)}}" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="method_id">
+                                                <label>
                                                     Method <span class="text-danger">*</span>
                                                 </label>
                                                 <select name="method_id" class="custom-select">
@@ -87,28 +87,28 @@
                                         @csrf
                                         <div class="mt-3">
                                             <div class="form-group">
-                                                <label for="host">
+                                                <label for="host_4">
                                                     Host <span class="text-danger">*</span>
                                                 </label>
-                                                <input name="host" type="text" class="form-control" placeholder="Host"
+                                                <input name="host" id="host_4" type="text" class="form-control" placeholder="Host"
                                                     required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="port">
+                                                <label for="port_4">
                                                     Port <span class="text-danger">*</span>
                                                 </label>
-                                                <input name="port" type="number" class="form-control" placeholder="Port"
+                                                <input name="port" id="port_4" type="number" class="form-control" placeholder="Port"
                                                     required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="seconds">
+                                                <label for="seconds_4">
                                                     Seconds <span class="text-danger">*</span>
                                                 </label>
-                                                <input name="seconds" type="number" class="form-control"
+                                                <input name="seconds" id="seconds_4" type="number" class="form-control"
                                                     placeholder="Seconds" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="method_id">
+                                                <label>
                                                     Method <span class="text-danger">*</span>
                                                 </label>
                                                 <select name="method_id" class="custom-select">
@@ -129,25 +129,25 @@
                                         @csrf
                                         <div class="mt-3">
                                             <div class="form-group">
-                                                <label for="host">
+                                                <label for="host_7">
                                                     Host <span class="text-danger">*</span>
                                                 </label>
-                                                <input name="host" type="text" class="form-control" placeholder="Host" required>
+                                                <input name="host" id="host_7" type="text" class="form-control" placeholder="Host" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="port">
+                                                <label for="port_7">
                                                     Port <span class="text-danger">*</span>
                                                 </label>
-                                                <input name="port" type="number" class="form-control" placeholder="Port" required>
+                                                <input name="port" id="port_7" type="number" class="form-control" placeholder="Port" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="seconds">
+                                                <label for="seconds_7">
                                                     Seconds <span class="text-danger">*</span>
                                                 </label>
-                                                <input name="seconds" type="number" class="form-control" placeholder="Seconds" required>
+                                                <input name="seconds" id="seconds_7" type="number" class="form-control" placeholder="Seconds" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="method_id">
+                                                <label>
                                                     Method <span class="text-danger">*</span>
                                                 </label>
                                                 <select name="method_id" class="custom-select">
