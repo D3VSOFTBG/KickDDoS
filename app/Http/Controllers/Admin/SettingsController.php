@@ -65,6 +65,10 @@ class SettingsController extends Controller
                 'name' => 'MAIL_FROM_ADDRESS',
                 'value' => $request->mail_from_address,
             ],
+            [
+                'name' => 'PRIVATE_KEY_PATH',
+                'value' => $request->private_key_path,
+            ],
         ];
 
         // MAIL MAILER
