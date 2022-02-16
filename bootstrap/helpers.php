@@ -67,7 +67,7 @@ function is_admin($is_admin)
     }
     else
     {
-        return 'No';
+        return 'User';
     }
 }
 function set_mail_config()
