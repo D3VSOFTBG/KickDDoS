@@ -144,6 +144,18 @@
                                 <input class="form-control" type="password" name="mail_password" id="mail_password" placeholder="Mail Password">
                             </div>
                         </div>
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <label for="private_key_path" class="m-0 d-flex">
+                                    <h3 class="card-title">
+                                        Private Key Path (Optional)
+                                    </h3>
+                                </label>
+                            </div>
+                            <div class="card-body">
+                                <input class="form-control" type="text" name="private_key_path" id="private_key_path" placeholder="Private Key Path" value="{{$settings['PRIVATE_KEY_PATH']}}">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- /.row -->

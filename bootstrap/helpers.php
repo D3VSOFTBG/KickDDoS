@@ -25,7 +25,7 @@ function kickddos_encrypt($unencrypted_password)
     $options = 0;
 
     // Non-NULL Initialization Vector for encryption
-    $encryption_iv = config('kickddos.iv');
+    $encryption_iv = config('app.name');
 
     // Store the encryption key
     $encryption_key = config('app.name');
@@ -117,5 +117,5 @@ function env_update($key, $value)
 }
 function kickddos_version()
 {
-    return 1;
+    return 1.1;
 }
